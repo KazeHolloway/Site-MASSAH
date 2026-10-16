@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord : Suivi de l'exécution des projets - MASSAH</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Chart.js depuis le CDN (sur Internet) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Lis les fichiers plugins en local si le CDN échoue (faute de connexion internet) -->
+    <script>
+        if (typeof Chart === "undefined") {
+            document.write('<script src="libs/chart.min.js"><\/script>');
+        }
+    </script>
+
+    <!-- chartjs-plugin-datalabels depuis le CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    
+    <!-- Fallback en local si le CDN échoue -->
+    <script>
+        if (typeof ChartDataLabels === "undefined") {
+            document.write('<script src="libs/chartjs-plugin-datalabels.min.js"><\/script>');
+        }
+    </script>
+</head>
+
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="assets/images/logo.png" alt="Logo Ministère" class="logo">
+            <h1>Ministère des Affaires Sociales, de la Solidarité et de l'Action Humanitaire</h1>
+        </div>
+    </header>
+    <br>
+    <h2>Tableau de Bord - Suivi de l'exécution des projets</h2>
+
+    <!-- Filtres -->
+    <section class="filters">
+        <div class="filter-group">
+            <label for="departement">Département :</label>
+            <select id="departement">
+                <option value="">-- En attente d'une connexion Internet --</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="cas">CAS :</label>
+            <select id="cas">
+                <option value="">-- En attente d'une connexion Internet --</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="annee">Année :</label>
+            <select id="annee">
+                <option value="">-- En attente d'une connexion Internet --</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Tableau de bord -->
+    <main class="dashboard">
+
+        <!-- Graphique 1 : Répartition par tranche d'âge -->
+        <div class="card" onclick="openModal('ageChart')">
+            <h2>Répartition par tranche d'âge</h2>
+            <canvas id="ageChart-mini"></canvas>
+        </div>
+
+        <!-- Graphique 2 : Répartition des projets -->
+        <div class="card" onclick="openModal('projectsChart')">
+            <h2>Nature des projets</h2>
+            <canvas id="projectsChart-mini"></canvas>
+        </div>
+
+    </main>
+
+    
+    <!-- Pour générer un PDF -->
+
+    <div style="text-align:center; margin: 20px;">
+        <button id="btnExportPDF2">📄 Exporter en PDF</button>
+    </div>
+
+
+    <!-- Modal unique pour agrandir les graphiques -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal()">✖</button>
+            <div id="modal-container"></div>
+        </div>
+    </div>
+
+    <!-- les boutons -->
+    <div class="nav-buttons">
+        <a href="./menu.html" class="btn-nav">⬅️ Retour à l'accueil</a>
+        <a href="./index.html" class="btn-nav">📊 Aller au suivi du financement des projets</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 - Ministère des Affaires Sociales, de la Solidarité et de l'Action Humanitaire</p>
+    </footer>
+
+    <script src="./js/script2.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> -->
+    <script src="libs/html2canvas.min.js"></script>
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
+    <script src="libs/jspdf.umd.min.js"></script>
+
+</body>
+
+</html>

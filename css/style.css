@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+
+    /* ajout pour que le footer soit en bas */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex : 1;
+}
+
+h1, h2, h4 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header {
+    background: #7d2e43;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .logo {
+    height: 60px;
+}
+
+header h1 {
+    font-size: 1.4rem;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    background: #fff;
+    margin: 1rem auto;
+    border-radius: 8px;
+    width: fit-content;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+select {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.card {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card h2 {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.mini-charts {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+canvas {
+    width: 100% !important;
+    height: 240px !important;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 95%;
+    max-width: 900px;
+    position: relative;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content canvas {
+    height: 400px !important;
+    /* ajout */
+    width: 100% !important;
+}
+
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: none;
+    background: transparent;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+footer {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Vue d'ensemble */
+.graph-camemberts .mini-charts canvas {
+    max-width: 45% !important;
+    /* height: 100px ; */
+    height: auto !important;
+}
+
+/* Vue agrandie dans le modal */
+.graph-camemberts-modal canvas {
+    max-width: 45% !important;
+    /* height: 100px ; */
+    /* height: auto !important; */
+}
+
+
+/* Deux petits camemberts dans la même carte */
+.dual-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.dual-chart div {
+    flex: 1;
+    text-align: center;
+}
+
+/* AJOUT */
+
+/* animation discrète */
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.modal.open .modal-content {
+    animation: modalFadeIn 180ms ease;
+}
+
+
+/* Style spécifique au menu */
+
+#tab_bord {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#tab_bord ul {
+    list-style: none;
+    padding: 0;
+}
+
+#tab_bord li {
+    margin: 15px 0;
+}
+
+#tab_bord a {
+    display: block;
+    padding: 15px 25px;
+    background-color: #005f73;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-align: center;
+    min-width: 300px;
+}
+
+#tab_bord a:hover {
+    background-color: #0a9396;
+    transform: scale(1.05);
+}
+
+/* Ajout pour les boutons de fin de pages */
+
+/* Boutons de navigation entre les tableaux de bord */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.btn-nav {
+    padding: 12px 20px;
+    background-color: #005f73;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn-nav:hover {
+    background-color: #0a9396;
+    transform: scale(1.05);
+}
