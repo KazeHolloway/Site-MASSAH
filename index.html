@@ -1,128 +1,40 @@
+<!-- http://localhost/Site_MASSAH_Test/menu.html -->
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de Bord : Suivi de financement des projets - MASSAH</title>
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Chart.js depuis le CDN (sur Internet) -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- Lis les fichiers plugins en local si le CDN échoue (faute de connexion internet) -->
-    <script>
-        if (typeof Chart === "undefined") {
-            document.write('<script src="libs/chart.min.js"><\/script>');
-        }
-    </script>
-
-    <!-- chartjs-plugin-datalabels depuis le CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-    
-    <!-- Fallback en local si le CDN échoue -->
-    <script>
-        if (typeof ChartDataLabels === "undefined") {
-            document.write('<script src="libs/chartjs-plugin-datalabels.min.js"><\/script>');
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - MASSAH</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-
 <body>
-    <header>
-        <div class="header-container">
-            <img src="assets/images/logo.png" alt="Logo Ministère" class="logo">
-            <h1>Ministère des Affaires Sociales, de la Solidarité et de l'Action Humanitaire</h1>
-        </div>
-    </header>
-    <br>
-    <h2>Tableau de Bord - Suivi de financement des projets</h2>
-
-    <section class="filters">
-        <div class="filter-group">
-            <label for="cas">CAS :</label>
-
-            <select id="cas">
-                <option value="">-- En attente d'une connexion Internet --</option>
-            </select>
-        </div>
-
-        <div class="filter-group">
-            <label for="annee">Année :</label>
-
-            <select id="annee">
-                <option value="">-- En attente d'une connexion Internet --</option>
-            </select>
-        </div>
-    </section>
-
-    <!--  Tableau de bord -->
-    <main class="dashboard">
-        <div class="card graph-camemberts" onclick="openModal('chart1')">
-            <h2>Répartition des projets par genre</h2>
-
-            <div class="dual-chart">
-                <div>
-                    <p>Taux de financement des 1re Tranche</p>
-                    <br>
-                    <canvas id="chart1a-mini"></canvas>
-                </div>
-                <div>
-                    <p>Taux de financement des 2e Tranche</p>
-                    <br>
-                    <canvas id="chart1b-mini"></canvas>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" onclick="openModal('chart2')">
-            <h2>Projets par type</h2>
-            <canvas id="chart2-mini"></canvas>
-        </div>
-
-        <div class="card" onclick="openModal('chart3')">
-            <h2>Variation annuelle de financement des projets</h2>
-            <canvas id="chart3-mini"></canvas>
-        </div>
-
-        <div class="card" onclick="openModal('chart4')">
-            <h2>Top 10 de la catégorie des projets les plus financés</h2>
-            <canvas id="chart4-mini"></canvas>
-        </div>
-    </main>
-
-    <!-- Pour générer un PDF -->
-
-    <div style="text-align:center; margin: 20px;">
-        <button id="btnExportPDF">📄 Exporter en PDF</button>
+  <header>
+    <div class="header-container">
+      <img src="assets/images/logo.png" alt="Logo Ministère" class="logo">
+      <h1>Ministère des Affaires Sociales, de la Solidarité et de l'Action Humanitaire</h1>
     </div>
+  </header>
 
-    
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <button class="close" onclick="closeModal()">✖</button>
-            <div id="modal-container"></div>
-        </div>
+  <main>
+    <h1 style="text-align: center; margin-top: 20px;">Accueil</h1>
+    <br><br>
+    <h2>Bonjour et bienvenue à vous !</h2>
+    <h4>Veuillez sélectionner un tableau de bord :</h4>
+
+    <div id="tab_bord">
+      <ul>
+        <li><a href="./index1.html">📊 Suivi de financement des projets</a></li>
+        <li><a href="./index2.html">📈 Suivi de l'exécution des projets</a></li>
+      </ul>
     </div>
+  </main>
 
-    <!-- les boutons -->
-    <div class="nav-buttons">
-        <a href="./menu.html" class="btn-nav">⬅️ Retour à l'accueil</a>
-        <a href="./index2.html" class="btn-nav">📈 Aller au suivi de l'exécution des projets</a>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 - Ministère des Affaires Sociales, de la Solidarité et de l'Action Humanitaire</p>
-    </footer>
-
-    <script src="./js/script.js"></script>
-
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> -->
-    <script src="libs/html2canvas.min.js"></script>
-    
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
-    <script src="libs/jspdf.umd.min.js"></script>
+  <footer>
+    <p>&copy; 2025 - Ministère des Affaires Sociales, de la Solidarité et de l'Action Humanitaire</p>
+  </footer>
 </body>
 
 </html>
