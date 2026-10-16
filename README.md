@@ -1,6 +1,6 @@
 # Site MASSAH
 
-Tableaux de bord web pour suivre le financement et l'exécution de projets de bénéficiaires, réalisés pendant mon stage à la Direction Générale des Affaires Sociales (DGAS) du Ministère des Affaires Sociales, de la Solidarité et de l'Action Humanitaire (MASSAH), à Brazzaville.
+Dashboards web pour suivre le financement et l'exécution de projets de bénéficiaires, réalisés pendant mon stage à la Direction Générale des Affaires Sociales (DGAS) du Ministère des Affaires Sociales, de la Solidarité et de l'Action Humanitaire (MASSAH), à Brazzaville.
 
 [Voir la démo en ligne](https://kazeholloway.github.io/Site-MASSAH/) · [Voir mon profil GitHub](https://github.com/KazeHolloway)
 
@@ -37,7 +37,7 @@ Tableaux de bord web pour suivre le financement et l'exécution de projets de b�
 
 ## Présentation
 
-Ce site permet de consulter, sous forme de graphiques, les chiffres du suivi de petits projets financés par le ministère. Chaque bénéficiaire passe par plusieurs étapes, à savoir le bilan de compétences (BC), la définition du projet (BP), puis l'exécution du projet, payée en deux tranches (T1 et T2). Le site rassemble ces informations dans deux tableaux de bord, avec des filtres pour choisir une circonscription (CAS), un département ou une année, et un bouton pour exporter les graphiques en PDF.
+Ce site permet de consulter, sous forme de graphiques, les chiffres du suivi de petits projets financés par le ministère. Chaque bénéficiaire passe par plusieurs étapes, à savoir le bilan de compétences (BC), la définition du projet (BP), puis l'exécution du projet, payée en deux tranches (T1 et T2). Le site rassemble ces informations dans deux tableaux de bord, avec des filtres pour choisir une Circonscription d'Action Sociale (CAS), un département ou une année, et un bouton pour exporter les graphiques en PDF.
 
 Il reprend en version web un tableau de bord qui existait déjà dans Excel, pour que les responsables puissent le consulter depuis n'importe quel poste du réseau interne du ministère.
 
@@ -147,7 +147,6 @@ Site-MASSAH/
 └── README.md
 ```
 
-La page d'accueil s'appelle `index.html` pour que GitHub Pages la trouve tout de suite.
 
 ## Comment le site fonctionne
 
@@ -222,7 +221,6 @@ Quand l'utilisateur change un filtre, le JavaScript appelle `get_data.php`, reç
 
 6. Ouvrir le site dans le navigateur : [http://localhost/Site-MASSAH/](http://localhost/Site-MASSAH/)
 
-> Ne publiez jamais de vrais identifiants ni de vraies données personnelles dans un dépôt public.
 
 ## Utilisation
 
@@ -245,7 +243,7 @@ Ce site a été réalisé en septembre 2025, pendant un stage d'un mois à la DG
 
 ## Auteur
 
-**MASSAMBA BOUESSO Christophe Darly** (alias KazeHolloway), Développeur FullStack en formation chez Akieni Academy, Brazzaville.
+**MASSAMBA BOUESSO Christophe Darly** (alias KazeHolloway), Développeur FullStack en formation chez Akieni Academy et titulaire d'une Licence Professionnelle Génie Logiciel, obtenue à ESGAE de Brazzaville.
 
 - GitHub : [KazeHolloway](https://github.com/KazeHolloway)
 - Repository du projet : [Site-MASSAH](https://github.com/KazeHolloway/Site-MASSAH)
